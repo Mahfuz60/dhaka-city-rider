@@ -31,6 +31,7 @@ const Header = () => {
                 to="/home"
               >
                 Pick Me
+                
               </Link>
               <button
                 className="navbar-toggler"

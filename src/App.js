@@ -26,7 +26,7 @@ function App() {
         <Switch>
           <Route path="/home"> <Home /> </Route>
           <Route path="/login"> <Login /> </Route>
-          <PrivateRoute path="/rides/:rideType"> <RideConfirm /> </PrivateRoute> 
+          <Route path="/rides/:rideType"> <RideConfirm /> </Route> 
           <Route exact path="/"><Home /></Route>
           <Route path="/rides/:rideType"> <RideConfirm /> </Route>
           <Route></Route>

@@ -99,6 +99,24 @@ const Login = () => {
                 .then((userCredential) => {
                     // Signed in 
                     var user = userCredential.user;
+                    const newUserInfo = { ...user };
+                    newUserInfo.error = '';
+                    newUserInfo.success = true;
+                    newUserInfo.error = '';
+                    newUserInfo.success = true;
+                    const { displayName, email } = user;
+                    const signedInUser = { name: displayName, email };
+                    setUser(newUserInfo);
+                    setLoggedInUser(signedInUser)
+                    console.log('User data from', user.providerData[0].providerId, "\n", user);
+                    setUser(user);
+                    console.log(from.pathname);
+                    // history.push(`${from.pathname}`)
+                    history.replace(from);
+
+                    setUser(newUserInfo);
+                    setLoggedInUser(newUserInfo)
+                    console.log('Signed user data from', user.providerData[0].providerId, "\n", user);
                     // ...
                 })
                 .then(res => {
@@ -218,11 +236,11 @@ const Login = () => {
                     <div className="container bg-light p-3 border rounded text-primary text-center">
                         {
                             newUser
-                                ? <h1 className="mb-3">Sign Up</h1>
-                                : < h1 className="mb-3">Sign In</h1>
+                                ? <h1 className="mb-3">Sign up</h1>
+                                : < h1 className="mb-3">Sign in</h1>
                         }
                         <input className="form-check-input" type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id="" />
-                        <label className="form-check-label fw-bold" htmlFor="newUser">New User</label>
+                        <label className="form-check-label fw-bold" htmlFor="newUser">New user</label>
                         <form className="container" action="" onSubmit={submitHandler}>
                             {
                                 newUser &&
@@ -230,7 +248,7 @@ const Login = () => {
                             }
                             <input className="m-1 border form-control" onBlur={blurHandler} name="email" placeholder="Email" type="text" required />
                             <input className="m-1 border form-control" onBlur={blurHandler} name="password" placeholder="Password" type="password" required />
-                            <input className="btn fs-5 fw-bold m-1 bg-warning border form-control" type="submit" value={newUser ? 'Sign up' : 'Sign in'} />
+                            <input className="btn fs-5 fw-bold m-1 bg-danger border form-control" type="submit" value={newUser ? 'Sign up' : 'Sign in'} />
                         </form>
                         <h4>or continue with </h4>
                         <button className="btn m-1" onClick={() => signInHandler(googleProvider, setGoogleUser)}><img src={GoogleIcon} width="30rem" alt="" /></button>
