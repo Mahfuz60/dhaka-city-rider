@@ -3,12 +3,13 @@ import Bike from '../../images/bike.png';
 import Car from '../../images/car.png';
 import Bus from '../../images/bus.png';
 import Train from '../../images/train.png';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const Rides = () => {
-    const card = (img, name, link) => {
+    const {rideType} = useParams()
+    const card = (img, name, rideType) => {
         return (
-            <Link className="nav-link" to={'/rides/'+ link}>
+            <Link className="nav-link" to={`/rides/${rideType}`}>
                 <div className="row m-1">
                     <div className="col-lg-8 col-sm-12"></div>
                     <div className="col-lg-4 col-sm-12">
@@ -26,7 +27,7 @@ const Rides = () => {
         )
     }
     return (
-        <div>
+        <div className="mt-5 pt-5">
             {card(Bike, "Bike", "bike")}
             {card(Car, "Car", "car")}
             {card(Bus, "Bus", "bus")}
