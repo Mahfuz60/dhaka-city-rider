@@ -1,11 +1,11 @@
 project name:DhakaCity Riders
-livesite:https://react-auth-b40c5.web.app/
-features:
-1.Email and Password Sign In
-2.Google Sign In
-3.FaceBook Sign In
-4.Github Sign In
-5.Time and Calender Used
-6.Traveling form used
-7.demo Map used
-List Material:React router,bootstrap,javascript,css design,fontawesome icon
+Website:https://react-auth-b40c5.web.app/
+Used Tools :React router,bootstrap,javascript,css design,fontawesome icon
+Features:
+-People moving Dhaka city any Place
+-Travel Cost Very Low Price
+-Bus, Train, Bike, Car Service are Available
+-People Choose this destination any time 
+![image](https://user-images.githubusercontent.com/36205825/116653335-cafb5180-a9a8-11eb-9d03-e5682da3e272.png)
+![image](https://user-images.githubusercontent.com/36205825/116653369-d6e71380-a9a8-11eb-8ec7-b1c6b6405c4d.png)
+
